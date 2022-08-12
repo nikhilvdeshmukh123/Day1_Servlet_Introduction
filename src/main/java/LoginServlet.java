@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
         urlPatterns = {"/LoginServlet"},
         initParams = {
                 @WebInitParam(name = "user", value = "Nikhil"),
-                @WebInitParam(name = "password", value = "Deshmukh")
+                @WebInitParam(name = "password", value = "Deshmukh1@")
         }
 )
 
@@ -29,6 +29,7 @@ public class LoginServlet extends HttpServlet {
         String password = getServletConfig().getInitParameter("password");
 
         String regexName = "^[A-Z]{1}[a-zA-Z]{2,}$";
+        String regexPassword = "^(?=.*[0-9])(?=.*[@#$%^&+=])(?=.*[a-z])(?=.*[A-Z]){8,}$";
 
         if (userID.equals(user) && password.equals(pwd)) {
             req.setAttribute("user", user);

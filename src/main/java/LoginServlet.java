@@ -27,6 +27,9 @@ public class LoginServlet extends HttpServlet {
 
         String userID = getServletConfig().getInitParameter("user");
         String password = getServletConfig().getInitParameter("password");
+
+        String regexName = "^[A-Z]{1}[a-zA-Z]{2,}$";
+
         if (userID.equals(user) && password.equals(pwd)) {
             req.setAttribute("user", user);
             req.getRequestDispatcher("LoginSuccess.jsp").forward(req, resp);
